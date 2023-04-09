@@ -7,11 +7,11 @@ class Controller{
         
         this.render();
         
-        /* document.querySelector('#addTodo').addEventListener('click' , (e) => {
+        document.querySelector('#addTodo').addEventListener('click' , (e) => {
             e.preventDefault();
             this.add();
             ;
-        }); */   
+        }); 
         
         document.querySelector('#clearCompleted').addEventListener('click' , (e) => {
             this.clearCompleted()
