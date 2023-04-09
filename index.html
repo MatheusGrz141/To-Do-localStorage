@@ -9,31 +9,40 @@
 </head>
 <body>
     
-     <div class="imagemHeader"></div>
-     
+    <div class="imagemHeader"></div>
+    
     
     <main>
-            <h1 id="title">TODO</h1>
+        <h1 id="title">TODO</h1>
         <div id="areaToDo">
             
-            <input type="text" id="toDOInput" placeholder="Create a new todo...">
-            <button id="addTodo">Adicionar</button>
-        </div>
-        
-        <div id="container">
             
+            <input type="text" id="toDOInput" placeholder="Create a new todo...">
+            
+            <div class="caixaBotao">
+                  <button id="addTodo">Adicionar</button>
+            </div>
           
             
-            </button>
         </div>
-    </div>
-</main>
-
-<script src="toDoController.js"></script>
-<script src="toDoModel.js"></script>
-<script src="toDoView.js"></script>
-<script>
-    let controller = new Controller();
-</script>
-</body>
-</html>
+        
+        <div id="container"></div> 
+        <div class="rodape">
+            <p id="qtd"></p>
+            <button id="all">All</button>
+            <button id="showActive">Active</button>
+            <button id="showCompleted">Completed</button>
+            <button id="clearCompleted">clear Completed</button</div>
+                
+                
+            </div>
+        </main>
+        
+        <script src="toDoController.js"></script>
+        <script src="toDoModel.js"></script>
+        <script src="toDoView.js"></script>
+        <script>
+            let controller = new Controller();
+        </script>
+    </body>
+    </html>

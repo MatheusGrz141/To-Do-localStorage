@@ -32,7 +32,7 @@ body{
 main{ border-radius: 5px;
   
    
-    width: 400px;
+    width: 550px;
 margin: 10px auto;    
 padding: 10px 20px;
 }
@@ -59,15 +59,19 @@ padding: 10px 20px;
 #toDOInput{
   
     height: 50px;
-    background-color: rgb(37, 61, 61);
+    background-color: rgb(37, 39, 61);
 border: none;
 outline: none;
-padding:  10px 20px;
+padding:  16px;
 font-size: 1.1rem;
-border-radius: 10px;
+margin-bottom: 20px;
 color: white;
 
 }
+.caixaBotao{
+   display: none;
+    margin: auto;
+  }
 #addTodo{
     width: 130px;
     height: 60px;
@@ -89,15 +93,14 @@ color: white;
     background-color: aliceblue;
     border: none; 
     margin: auto;
-    border-radius: 5px;
+    box-shadow: 10px 22px 24px rgba(0, 0, 0, 0.5);
     background-color: rgb(37, 39, 61);
-    border-radius: 15px;
+
 }
 .divBox{
 
-      border-radius: 15px;
 margin:   auto;
-width: 90%;
+
 
 color: white;
     height: 35px;
@@ -118,28 +121,60 @@ height: 25px;
     
 margin:   auto;
 }
+.btnDelete{
+    opacity: 0;
+    
+  }
 .divBox:hover .btnDelete{
    color: black;
    font-weight: bold;
-  
+  opacity: 1;
    cursor: pointer;
+}
+.divBox span{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+   overflow: hidden;
 }
 .btnCheck ,.btnDelete{
     background-color: transparent;
     border: none;
     margin: 20px ;
     padding:  0;
-  
+    filter: invert(.7);
+ 
    
 
 }
 .btnCheck {
 margin-left: 5px;
 cursor: pointer;
+
+
 }
-.btnDelete{
-  
-    color: transparent; 
+
+
+.rodape{
+    background-color: rgb(37, 39, 61);
+
+    padding: auto;
+    display: flex;
+}
+.rodape *{
+    background-color:  transparent;
+    color: white;
+    border: none;
+cursor: pointer;
+
+}
+.rodape p{
+  cursor: auto;
+   
+    margin-right: 100px;
+    margin-left: 20px;
+}
+.rodape #clearCompleted{
+    margin-left: 80px;
 }
 
 @media (max-width: 720px) {
@@ -158,5 +193,10 @@ cursor: pointer;
     .divBox {
         height: 50px;
         
+    }
+    .caixaBotao{
+        display: flex;
+       
+       
     }
 }
