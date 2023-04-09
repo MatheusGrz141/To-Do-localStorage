@@ -181,6 +181,7 @@ cursor: pointer;
    
     main{
         width: 90%;
+        min-width: 380px;
         padding: 0;
     }
     .imagemHeader{
@@ -198,5 +199,24 @@ cursor: pointer;
         display: flex;
        
        
+    }
+    .rodape{
+      width: 100%;
+    
+       display: flex;
+       gap: auto;
+      
+    }
+  
+    
+    
+    .rodape p{
+      cursor: auto;
+      margin: auto;
+    }
+    .rodape #clearCompleted{
+        /* margin-left: 20px; */
+        margin:20px auto;
+        margin-right: 10px;
     }
 }
