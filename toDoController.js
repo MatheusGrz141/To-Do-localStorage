@@ -1,19 +1,22 @@
+let listaTodos =  JSON.parse(localStorage.getItem("salvarToDo")) || []
 
-let listaTodos = JSON.parse(localStorage.getItem("salvarToDo")) ||[];
 class Controller{
     constructor(){
         this.container = document.querySelector('#container');
         
-       // 
+  
         this.render();
+        
         document.querySelector('#addTodo').addEventListener('click' , (e) => {
             e.preventDefault();
             this.add();
-            document.querySelector('#toDOInput').value =''
+            this.clearInput();
         });   
         this.bind();
-        this.salvarToDo()
+       
     } 
+  
+
     render(){
         this.container.innerHTML = '';
         listaTodos.forEach((todo, index) => {
@@ -54,7 +57,7 @@ class Controller{
     }
     check(targetButton){
         let index = targetButton.closest('div').dataset.index;
-        listaTodos[index].setDone = !(listaTodos[index].getDone);
+        listaTodos[index].done = !(listaTodos[index].done);
         this.render(); 
         this.salvarToDo()
     }
@@ -63,7 +66,9 @@ class Controller{
         localStorage.setItem('salvarToDo' , JSON.stringify(listaTodos))
         
     }
-    
+    clearInput() {
+        document.querySelector('#toDOInput').value = '';
+    }
 }
 
 
