@@ -1,24 +1,26 @@
 
-
+let listaTodos = JSON.parse(localStorage.getItem("salvarToDo")) ||[];
 class Controller{
     constructor(){
         this.container = document.querySelector('#container');
-        this.listaTodos = [];
-        this.listaTodos = JSON.parse(localStorage.getItem("salvarToDo")) ||[];
+        
+       // 
         this.render();
         document.querySelector('#addTodo').addEventListener('click' , (e) => {
             e.preventDefault();
             this.add();
+            document.querySelector('#toDOInput').value =''
         });   
-  
+        this.bind();
+        this.salvarToDo()
     } 
     render(){
         this.container.innerHTML = '';
-        this.listaTodos.forEach((todo, index) => {
+        listaTodos.forEach((todo, index) => {
             this.container.innerHTML += new TodoView(todo, index).template();
         });
-        this.bind();
         
+        this.bind();
     }
     bind(){
         document.querySelectorAll('.btnDelete').forEach((btn) => {
@@ -32,30 +34,35 @@ class Controller{
                 this.check(e.target);
             })
         })
+        
     }
     
     add(){
         const todo = document.querySelector('#toDOInput').value;
-        this.listaTodos.push(new toDoModel(todo , false));
+        listaTodos.push(new toDoModel(todo , false));
         this.render();
-        localStorage.setItem('salvarToDo' , JSON.stringify(this.listaTodos))
+        this.salvarToDo()
        
         
     }
     delete(targetButton){
         let index = targetButton.closest('div').dataset.index;
         targetButton.closest('div').remove();
-        this.listaTodos.splice(index ,1);
+        listaTodos.splice(index ,1);
         this.render();
-        
+        this.salvarToDo()
     }
     check(targetButton){
         let index = targetButton.closest('div').dataset.index;
-        this.listaTodos[index].setDone = !(this.listaTodos[index].getDone);
+        listaTodos[index].setDone = !(listaTodos[index].getDone);
         this.render(); 
+        this.salvarToDo()
+    }
+    salvarToDo(){
+       
+        localStorage.setItem('salvarToDo' , JSON.stringify(listaTodos))
         
     }
-
     
 }
 
