@@ -2,21 +2,14 @@
 :root{
     /* ### Primary */
 
-    --Bright-Blue: hsl(220, 98%, 61%)
-    --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
+    --Bright-Blue: hsl(220, 98%, 61%);
+    --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
     
-    /* ### Neutral */
-    
-    /* ### Light Theme */
-    
-    --Very-Light-Gray: hsl(0, 0%, 98%);
-    --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
-    --Light-Grayish-Blue: hsl(233, 11%, 84%);
-    --Dark-Grayish-Blue: hsl(236, 9%, 61%);
-    --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  
     
     /* ### Dark Theme */
-    
+    --corLetras:  hsl(234, 39%, 85%);
     --Very-Dark-Blue: hsl(235, 21%, 11%);
     --Very-DarkDesaturated-Blue: hsl(235, 24%, 19%);
     --Light-Grayish-Blue: hsl(234, 39%, 85%);
@@ -25,7 +18,16 @@
     --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
     --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%) ;
 }
-
+.light{
+      
+    /* ### Light Theme */
+     --corLetras:  hsl(235, 21%, 11%);
+    --Very-Dark-Blue: hsl(0, 0%, 98%);
+    --Very-DarkDesaturated-Blue: hsl(236, 33%, 92%);
+    --Light-Grayish-Blue: hsl(233, 11%, 84%);
+    --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+    --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%); 
+}
 body{
     background-color: var(--Very-Dark-Blue);
 }
@@ -40,7 +42,6 @@ padding: 10px 20px;
     background-image: url(../images/bg-desktop-dark.jpg);
      width: 100%;
    height: 200px;
-  /* object-fit: cover*/;
      background-size: cover;
     background-repeat: no-repeat;
     z-index: -1000;
@@ -48,7 +49,7 @@ padding: 10px 20px;
     top: 0; 
 }
 #title{
-    color:rgb(188, 187, 195) ;
+    color: var(--corLetras) ;
 }
 #areaToDo{
     display: flex;
@@ -59,42 +60,29 @@ padding: 10px 20px;
 #toDOInput{
   
     height: 50px;
-    background-color: rgb(37, 39, 61);
-border: none;
-outline: none;
-padding:  16px;
-font-size: 1.1rem;
-margin-bottom: 20px;
-color: white;
+    background-color:var(--Very-DarkDesaturated-Blue);
+    border: none;
+    outline: none;
+    padding:  16px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--corLetras) ;
+    border-radius: 5px;
 
 }
 .caixaBotao{
    display: none;
     margin: auto;
   }
-#addTodo{
-    width: 130px;
-    height: 60px;
-    margin: 10px auto;
-    padding: 10px;
-    border-radius: 15px;
-    color: white;
-    border: none;
-    background-color: rgb(33, 34, 86)
-}#addTodo:hover{
-    background-color: var(--Very-Dark-Grayish-Blue);
-    cursor: pointer;
-    border: 2px solid var(--Light-Grayish-Blue);
-    color: white;
-}
 #container{
+    border-radius: 5px 5px 0 0;
     width: 100%;
     box-sizing: border-box;
     background-color: aliceblue;
     border: none; 
     margin: auto;
     box-shadow: 10px 22px 24px rgba(0, 0, 0, 0.5);
-    background-color: rgb(37, 39, 61);
+    background-color: var(--Very-DarkDesaturated-Blue);
 
 }
 .divBox{
@@ -102,7 +90,7 @@ color: white;
 margin:   auto;
 
 
-color: white;
+color: var(--corLetras) ;
     height: 35px;
     padding: 15px;
   
@@ -126,7 +114,7 @@ margin:   auto;
     
   }
 .divBox:hover .btnDelete{
-   color: black;
+    color: var(--corLetras) ;
    font-weight: bold;
   opacity: 1;
    cursor: pointer;
@@ -135,6 +123,9 @@ margin:   auto;
     text-overflow: ellipsis;
     white-space: nowrap;
    overflow: hidden;
+   
+}.divBox span.checked{
+    text-decoration: line-through;
 }
 .btnCheck ,.btnDelete{
     background-color: transparent;
@@ -149,20 +140,20 @@ margin:   auto;
 .btnCheck {
 margin-left: 5px;
 cursor: pointer;
-
+text-decoration: line-through;
 
 }
 
 
 .rodape{
-    background-color: rgb(37, 39, 61);
-
+    background-color:var(--Very-DarkDesaturated-Blue);
+    border-radius:0 0 5px 5px ;
     padding: auto;
     display: flex;
 }
 .rodape *{
     background-color:  transparent;
-    color: white;
+    color: var(--corLetras) ;
     border: none;
 cursor: pointer;
 
@@ -202,9 +193,10 @@ cursor: pointer;
     }
     .rodape{
       width: 100%;
-    
+      margin: 20px auto;
        display: flex;
        gap: auto;
+       border-radius: 5px;
       
     }
   

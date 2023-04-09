@@ -7,11 +7,7 @@ class Controller{
         
         this.render();
         
-        document.querySelector('#addTodo').addEventListener('click' , (e) => {
-            e.preventDefault();
-            this.add();
-            ;
-        }); 
+        
         
         document.querySelector('#clearCompleted').addEventListener('click' , (e) => {
             this.clearCompleted()
@@ -51,6 +47,7 @@ class Controller{
     render(){
         this.container.innerHTML = '';
         listaTodos.forEach((todo, index) => {
+            
             this.container.innerHTML += new TodoView(todo, index).template();
         });
         
@@ -68,6 +65,7 @@ class Controller{
             btn.addEventListener('click', (e) =>{
                 this.check(e.target);
             })
+            
         })
         
     }
@@ -89,11 +87,13 @@ class Controller{
         this.salvarToDo()
         
     }
-    check(targetButton){
+    check(targetButton){ 
+        
         let index = targetButton.closest('div').dataset.index;
         listaTodos[index].done = !(listaTodos[index].done);
         this.render(); 
         this.salvarToDo() ;
+        
         
     }
     salvarToDo(){
@@ -154,6 +154,21 @@ class Controller{
     clearInput() {
         document.querySelector('#toDOInput').value = '';
     }
+    
 }
-
+function toggleMode() {
+    const html = document.documentElement
+    html.classList.toggle("light");
+    
+    
+    
+    /*   if(html.classList.contains('light')){
+        img.setAttribute('src' , './images/profile_light.jpeg')
+    }else{
+        img.setAttribute('src' , './images/profile.jpeg')
+    }
+    */
+    
+    
+}
 

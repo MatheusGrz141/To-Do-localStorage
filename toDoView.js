@@ -25,7 +25,7 @@ class TodoView {
         
         <div data-index="${this.todoIndex}" class="divBox">  
         <button class="btnCheck">${this.toDo.done ? unchecked : check}</button>
-        <span>${this.toDo.title}</span>
+        <span class="">${this.toDo.title}</span>
         <button class="btnDelete">${trash}</button>
         </div>
         
