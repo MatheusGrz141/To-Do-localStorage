@@ -4,7 +4,7 @@ class Controller{
     constructor(){
         this.container = document.querySelector('#container');
         this.listaTodos = [];
-        this.listaTodos = JSON.parse(localStorage.getItem("salvarToDo"));
+        this.listaTodos = JSON.parse(localStorage.getItem("salvarToDo")) ||[];
         this.render();
         document.querySelector('#addTodo').addEventListener('click' , (e) => {
             e.preventDefault();
@@ -39,7 +39,7 @@ class Controller{
         this.listaTodos.push(new toDoModel(todo , false));
         this.render();
         localStorage.setItem('salvarToDo' , JSON.stringify(this.listaTodos))
-        console.log(localStorage.salvarToDo)
+       
         
     }
     delete(targetButton){
