@@ -12,7 +12,7 @@ class Controller{
             this.add();
             this.clearInput();
         });   
-        this.bind();
+        
        
     } 
   
@@ -51,6 +51,7 @@ class Controller{
     delete(targetButton){
         let index = targetButton.closest('div').dataset.index;
         targetButton.closest('div').remove();
+   
         listaTodos.splice(index ,1);
         this.render();
         this.salvarToDo()
