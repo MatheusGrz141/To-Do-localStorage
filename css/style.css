@@ -25,6 +25,7 @@
     --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
     --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%) ;
 }
+
 body{
     background-color: var(--Very-Dark-Blue);
 }
@@ -47,7 +48,7 @@ padding: 10px 20px;
     top: 0; 
 }
 #title{
-    color:rgb(255, 255, 255) ;
+    color:rgb(188, 187, 195) ;
 }
 #areaToDo{
     display: flex;
@@ -68,13 +69,14 @@ border-radius: 10px;
 
 }
 #addTodo{
-    width: 90px;
-    height: 40px;
+    width: 130px;
+    height: 60px;
     margin: 10px auto;
     padding: 10px;
-    border-radius: 50px;
+    border-radius: 15px;
+    color: white;
     border: none;
-    background-color: var(--Light-Grayish-Blue);
+    background-color: rgb(33, 34, 86)
 }#addTodo:hover{
     background-color: var(--Very-Dark-Grayish-Blue);
     cursor: pointer;
@@ -89,28 +91,37 @@ border-radius: 10px;
     margin: auto;
     border-radius: 5px;
     background-color: rgb(37, 39, 61);
+    border-radius: 15px;
 }
 .divBox{
 
-      border-radius: 10px;
+      border-radius: 15px;
 margin:   auto;
 width: 90%;
 
 color: white;
     height: 35px;
-    padding: auto;
+    padding: 15px;
   
     display: flex;
     align-items: center;
 text-align: left;
+border-bottom: 1px solid grey;
 
-}.divBox *{
+}.divBox svg {
+width: 25px;
+height: 25px;
+}
+
+.divBox *{
 
     
 margin:   auto;
 }
 .divBox:hover .btnDelete{
    color: black;
+   font-weight: bold;
+  
    cursor: pointer;
 }
 .btnCheck ,.btnDelete{
@@ -118,6 +129,7 @@ margin:   auto;
     border: none;
     margin: 20px ;
     padding:  0;
+  
    
 
 }
@@ -128,4 +140,23 @@ cursor: pointer;
 .btnDelete{
   
     color: transparent; 
+}
+
+@media (max-width: 720px) {
+   
+    main{
+        width: 90%;
+        padding: 0;
+    }
+    .imagemHeader{
+      width: 100%;  
+      margin: 0;
+    }
+    h1{
+        margin: 30px;
+    }
+    .divBox {
+        height: 50px;
+        
+    }
 }
