@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <title>ToDo</title>
 </head>
 <body>
@@ -13,7 +16,10 @@
     
     
     <main>
-        <h1 id="title">ToDo</h1> <button id="trocar" onclick="toggleMode()">x</button>
+        <div class="togleButon">
+            <h1 id="title">T O D O</h1>
+            <button id="toggleMode"></button>
+        </div>
         <div id="areaToDo">   
             <input type="text" id="toDOInput" placeholder="Create a new todo...">
             

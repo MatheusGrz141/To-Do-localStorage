@@ -7,7 +7,9 @@ class Controller{
         
         this.render();
         
-        
+        document.querySelector('#toggleMode').addEventListener('click' , (e) => {
+            this.toggleMode()
+        }); 
         
         document.querySelector('#clearCompleted').addEventListener('click' , (e) => {
             this.clearCompleted()
@@ -154,21 +156,21 @@ class Controller{
     clearInput() {
         document.querySelector('#toDOInput').value = '';
     }
-    
-}
-function toggleMode() {
-    const html = document.documentElement
-    html.classList.toggle("light");
-    
-    
-    
-    /*   if(html.classList.contains('light')){
-        img.setAttribute('src' , './images/profile_light.jpeg')
-    }else{
-        img.setAttribute('src' , './images/profile.jpeg')
+    toggleMode() {
+        const html = document.documentElement
+        html.classList.toggle("light");
+        
+        
+        let img = document.querySelector("#toggleMode")
+        if(html.classList.contains('light')){
+            img.setAttribute('src' , './images/icon-moon.svg')
+        }else{
+            img.setAttribute('src' , './images/icon-sun.svg')
+        }
+        
+        
+        
     }
-    */
-    
-    
 }
+
 
