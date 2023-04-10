@@ -3,8 +3,6 @@ class toDoModel{
         this.title = title;
         this.done = done;
     }
-    
-    
     set setDone(done){
         this.done = done;
     }
